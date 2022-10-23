@@ -4,11 +4,9 @@
  */
 package Semana_11.Tarea;
 
-import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
@@ -56,40 +54,6 @@ class Metodo{
     }
 }
 
-class Tabla_datos {
-    String tipo;
-    int tam;
-    long inicio, fin, resultado;
-    
-
-    public Tabla_datos(int tam_, String tipo_, long inicio_, long fin_,long resul_) {
-        this.tam = tam_;
-        this.tipo = tipo_;
-        this.inicio = inicio_;
-        this.fin = fin_;
-        this.resultado=resul_ ;
-    }
-
-    public int getTam() {
-        return tam;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public long getInicio() {
-        return inicio;
-    }
-
-    public long getFin() {
-        return fin;
-    }
-
-    public long getResul() {
-        return resultado;
-    }  
-}
 public class Trabajo extends javax.swing.JFrame {
     
     Metodo metodo =new Metodo();
