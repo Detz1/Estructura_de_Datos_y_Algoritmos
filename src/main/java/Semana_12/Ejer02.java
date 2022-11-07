@@ -47,7 +47,7 @@ class metodo{
 public class Ejer02 {
     public static void main(String[] args) {
         metodo m=new metodo();
-        m.ingresar("Dito");
+        m.ingresar("Pito");
         m.ingresar("Popo");
         m.ingresar("Fido");
         m.ingresar("Firulais");
