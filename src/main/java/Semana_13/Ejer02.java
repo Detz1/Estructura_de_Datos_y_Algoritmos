@@ -27,6 +27,8 @@ class nodo{
         this.ant=this.sgte=null;
     }
 }
+
+
 class metodo{
     nodo origen, fin;
     public metodo(){
@@ -49,15 +51,35 @@ class metodo{
             temp=temp.ant;
         }
     }
+    void mostrarp(){
+        nodo temp=origen;
+        while(temp!=null){
+            System.out.print(temp.dato.informacion()+"\t");
+            temp=temp.sgte;
+        }
+    }
+    
+    void mostrarc(){
+        nodo temp=fin;
+        while(temp!=null){
+            System.out.print(temp.dato.informacion()+"\t");
+            temp=temp.ant;
+        }
+    }
 }
 public class Ejer02 {
     public static void main(String[] args) {
         metodo m=new metodo();
-        m.ingresar(new fruta("A","Red"));
+        m.ingresar(new fruta("A","Brown"));
         m.ingresar(new fruta("B","Blue"));
-        m.ingresar(new fruta("C","Pink"));
+        m.ingresar(new fruta("C","Yellow"));
         m.ingresar(new fruta("D","Green"));
         m.ingresar(new fruta("E","Blue"));
         m.mostrarColo();
+        
+        System.out.println("\nPor Pila");
+        m.mostrarp();
+        System.out.println("\nPor cola");
+        m.mostrarc();
     }
 }

@@ -50,7 +50,7 @@ public class Ejer02 {
         m.ingresar("Pito");
         m.ingresar("Popo");
         m.ingresar("Fido");
-        m.ingresar("Firulais");
+        m.ingresar("Caramelo");
         m.mostrar();
     }
 }

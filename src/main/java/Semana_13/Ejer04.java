@@ -50,12 +50,18 @@ class metodo{
 
     void eliminar(int i) {
         nodo temp=origen;
+        
+        if(i==temp.dato){  //Agregado
+            origen=temp.sgte;
+        }   
+        
         do {            
             if(i==temp.dato){
                 break;
             }
             temp=temp.sgte;
         } while (temp!=origen);
+        
         temp.ant.sgte=temp.sgte;
         temp.sgte.ant=temp.ant;
         temp.ant=null;
@@ -67,12 +73,12 @@ public class Ejer04 {
         metodo m=new metodo();
         m.ingresar(12);
         m.ingresar(10);
-        m.ingresar(8);
+        m.ingresar(4);
         m.ingresar(7);
         m.ingresar(5);
         System.out.println("Elementos: ");
         m.mostrar();
-        m.eliminar(12);
+        m.eliminar(10);
        System.out.println("\nElementos: ");
         m.mostrar();
     }

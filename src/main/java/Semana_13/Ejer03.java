@@ -53,6 +53,8 @@ class metodo{
             temp=temp.sgte;
         }while(temp!=origen);
     }
+    
+    
 }
 public class Ejer03 {
     public static void main(String[] args) {
@@ -60,8 +62,8 @@ public class Ejer03 {
         m.ingresar(new perro("A", 10));
         m.ingresar(new perro("B", 20));
         m.ingresar(new perro("C", 5));
-        m.ingresar(new perro("E", 0));
-        m.ingresar(new perro("F", 8));
+        m.ingresar(new perro("E", 1));
+        m.ingresar(new perro("F", 11));
         m.mostrar();
     }
 }

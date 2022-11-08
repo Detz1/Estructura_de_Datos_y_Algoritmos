@@ -43,7 +43,7 @@ public class Ejer01 {
         m.ingresar(9);
         m.ingresar(8);
         m.ingresar(5);
-        m.ingresar(2);
+        m.ingresar(4);
         m.mostrar();
     }
 }
