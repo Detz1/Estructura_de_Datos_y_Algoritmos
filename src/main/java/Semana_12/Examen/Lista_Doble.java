@@ -53,7 +53,7 @@ public class Lista_Doble {
         }
     }
     
-    void escribirTxt()throws IOException{   //ESCRIBE EL OBJETO EN EL TXT
+    void escribirTxt()throws IOException{   //ESCRIBE LISTA EN EL TXT
         File arch = new File("Deiby - Lista Doble.txt");
         if(!arch.exists()){
             arch.createNewFile();

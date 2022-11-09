@@ -49,7 +49,7 @@ public class Lista_Simple {
         }
     }
     
-    void escribirTxt()throws IOException{   //ESCRIBE EL OBJETO EN EL TXT
+    void escribirTxt()throws IOException{   //ESCRIBE LISTA EN EL TXT
         File arch = new File("Deiby - Lista Simple.txt");
         if(!arch.exists()){
             arch.createNewFile();

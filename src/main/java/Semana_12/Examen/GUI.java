@@ -38,9 +38,6 @@ class Complementos{
 }
 
 
-
-
-
 public class GUI extends javax.swing.JFrame  {
     Complementos cp= new Complementos();
     
@@ -78,7 +75,8 @@ public class GUI extends javax.swing.JFrame  {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_crear.setText("CREAR");
+        btn_crear.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
+        btn_crear.setText("SAVE");
         btn_crear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_crearActionPerformed(evt);
@@ -88,8 +86,10 @@ public class GUI extends javax.swing.JFrame  {
         lbl_welcome.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         lbl_welcome.setText("** BIENVENIDO **");
 
-        lbl_tipo.setText("TIPO DE LISTA :");
+        lbl_tipo.setFont(new java.awt.Font("Eras Demi ITC", 0, 10)); // NOI18N
+        lbl_tipo.setText("TIPO DE LISTA ");
 
+        lbl_animal.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lbl_animal.setText("Numero de animales: ");
 
         text_nAnimal.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +98,7 @@ public class GUI extends javax.swing.JFrame  {
             }
         });
 
+        btn_simple.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         btn_simple.setText("Simple");
         btn_simple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +106,7 @@ public class GUI extends javax.swing.JFrame  {
             }
         });
 
+        btn_doble.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         btn_doble.setText("Doble");
 
         jTextArea1.setColumns(20);
@@ -115,47 +117,49 @@ public class GUI extends javax.swing.JFrame  {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_animal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(106, 106, 106)
+                        .addComponent(lbl_welcome))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_welcome)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(text_nAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lbl_tipo)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_doble, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_crear)
-                    .addComponent(btn_simple, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 17, Short.MAX_VALUE))
+                                .addComponent(lbl_animal)
+                                .addGap(4, 4, 4)
+                                .addComponent(text_nAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_simple, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_doble, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_crear)
+                            .addComponent(lbl_tipo))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(5, 5, 5)
                 .addComponent(lbl_welcome)
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_animal)
+                    .addComponent(text_nAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl_animal)
-                            .addComponent(text_nAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_simple)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_simple)
+                        .addGap(4, 4, 4)
                         .addComponent(btn_doble)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_crear)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addComponent(btn_crear))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,7 +175,7 @@ public class GUI extends javax.swing.JFrame  {
         String especie[]={"Marsupial","Oviparo","Mamifero"};
         
         if(btn_simple.isSelected()){
-            for(int i=0;i<n;i++){
+            for(int i=0; i<n ; i++ ){
                 
                 met_s.ingresar(new Animales(especie[(int)(Math.random()*2)],cp.cadenaAleatoria(5),cp.nAleatorio(1,25),sexo[(int)(Math.random()*2)]));
                 
@@ -182,7 +186,7 @@ public class GUI extends javax.swing.JFrame  {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else if(btn_doble.isSelected()){
-            for(int i=0;i<n;i++){
+            for(int i=0 ; i<n ; i++ ){
                 
                 met_d.ingresar(new Animales(especie[(int)(Math.random()*2)],cp.cadenaAleatoria(5),cp.nAleatorio(1,25),sexo[(int)(Math.random()*2)]));
                 
@@ -195,6 +199,7 @@ public class GUI extends javax.swing.JFrame  {
         }else{
                 JOptionPane.showMessageDialog(null, "SIN SELECCION");
                 }
+        
         met_s.mostrar();
         met_d.mostrar();
     }//GEN-LAST:event_btn_crearActionPerformed
