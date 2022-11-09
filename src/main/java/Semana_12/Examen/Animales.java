@@ -8,6 +8,7 @@ package Semana_12.Examen;
  *
  * @author Detz1
  */
+
 public class Animales {
     private String especie;
     private String nombre;
@@ -23,7 +24,7 @@ public class Animales {
 
     @Override
     public String toString() {
-        return "( Especie=" + especie + ", nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo+" )" ;
+        return "( Especie = " + especie + ", nombre = " + nombre + ", edad = " + edad + ", sexo = " + sexo+" )" ;
     }
     
 }

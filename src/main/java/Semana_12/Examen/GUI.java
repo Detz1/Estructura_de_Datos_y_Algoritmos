@@ -4,9 +4,7 @@
  */
 package Semana_12.Examen;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +23,7 @@ class Complementos{
         return n;      
     }
     
-    static String cadenaAleatoria(int longitud) {
+    static String cadenaAleatoria(int longitud) { // DEVUELVE UN NOMBRE ALEATORIO
         // El banco de caracteres
         String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         // La cadena en donde iremos agregando un carácter aleatorio
@@ -39,100 +37,13 @@ class Complementos{
     }
 }
 
-class nodo_Simple{
-    Animales dato;
-    nodo_Simple sgte;
-    
-    public nodo_Simple(Animales dato) {
-        this.dato = dato;
-        this.sgte = null;
-    } 
-}
-
-class Lista_Simple{
-    nodo_Simple origen=null;
-    
-    
-    void ingresar(Animales n){
-        nodo_Simple newnodo=new nodo_Simple(n);
-        if(origen==null){
-            origen=newnodo;
-        }else{
-            newnodo.sgte=origen;
-            origen=newnodo;
-        }
-        
-    }
-    
-    void mostrar(){
-        nodo_Simple  temp=origen;
-        while(temp!=null){
-            System.out.print(temp.dato+" --> ");
-            temp=temp.sgte;
-        }
-    }
-    
-}
 
 
-class nodo_Doble{
-    Animales dato;
-    nodo_Doble sgte,ant;
-    
-    public nodo_Doble(Animales n){
-        this.dato=n;
-        this.ant=this.sgte=null;
-    } 
-
-    
-}
-
-class Lista_Doble {
-   nodo_Doble origen, fin;
-   
-    public Lista_Doble(){
-        this.origen=this.fin=null;
-    }
-    void ingresar(Animales n){
-        nodo_Doble newnodo=new nodo_Doble(n);        
-        if(origen==null){            
-            fin=origen=newnodo;
-        }else{
-                newnodo.sgte=origen;
-                origen.ant=newnodo;
-                origen=newnodo;
-                }
-    }
-    
-    void mostrar(){
-        nodo_Doble temp=fin;
-        while(temp!=null){
-            System.out.print(temp.dato+" --> ");
-            
-            temp=temp.ant;
-        }
-    }
-    
-    void escribirTxt()throws IOException{   //ESCRIBE EL OBJETO EN EL TXT
-        File arch = new File("Deiby.txt");
-        if(!arch.exists()){
-            arch.createNewFile();
-        }
-        PrintWriter pw=new PrintWriter(arch);
- 
-        nodo_Doble temp1 = fin;
-        pw.println("Hola : \n");
-        while(temp1!=null){
-            //pw.print(" -> "+temp1.dato());
-            temp1=temp1.ant;
-        }
-    
-    }
-}
 
 
-public class GUI extends javax.swing.JFrame {
+public class GUI extends javax.swing.JFrame  {
     Complementos cp= new Complementos();
+    
     /**
      * Creates new form GUI
      */
@@ -258,11 +169,17 @@ public class GUI extends javax.swing.JFrame {
         
         String sexo[]={"Macho","Hembra"};
         String especie[]={"Marsupial","Oviparo","Mamifero"};
+        
         if(btn_simple.isSelected()){
             for(int i=0;i<n;i++){
                 
                 met_s.ingresar(new Animales(especie[(int)(Math.random()*2)],cp.cadenaAleatoria(5),cp.nAleatorio(1,25),sexo[(int)(Math.random()*2)]));
                 
+            }
+            try {
+                met_s.escribirTxt();
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else if(btn_doble.isSelected()){
             for(int i=0;i<n;i++){
@@ -278,13 +195,8 @@ public class GUI extends javax.swing.JFrame {
         }else{
                 JOptionPane.showMessageDialog(null, "SIN SELECCION");
                 }
-        
-        
         met_s.mostrar();
         met_d.mostrar();
-        
-            
-        
     }//GEN-LAST:event_btn_crearActionPerformed
 
     private void text_nAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_nAnimalActionPerformed
@@ -320,6 +232,7 @@ public class GUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

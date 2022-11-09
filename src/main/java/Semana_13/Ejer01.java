@@ -90,7 +90,7 @@ public class Ejer01 {
         m.ingresar(5);
         m.ingresar(7);
         m.ingresar(15);
-        m.ingresar(10);
+        m.ingresar(8);
         m.ingresar(3);
         System.out.println("Por Pila");
         m.mostrarp();
