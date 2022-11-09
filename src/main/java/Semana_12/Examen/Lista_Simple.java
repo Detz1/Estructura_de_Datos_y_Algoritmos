@@ -5,8 +5,11 @@
 package Semana_12.Examen;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  *
@@ -37,14 +40,13 @@ public class Lista_Simple {
         }else{
             newnodo.sgte=origen;
             origen=newnodo;
-        }
-        
+        }  
     }
     
     void mostrar(){
         nodo_Simple  temp=origen;
         while(temp!=null){
-            System.out.print(temp.dato+" --> ");
+            System.out.print(temp.dato+" -> ");
             temp=temp.sgte;
         }
     }
@@ -57,11 +59,22 @@ public class Lista_Simple {
         PrintWriter pw=new PrintWriter(arch);
  
         nodo_Simple temp = origen;
-        pw.println("LISTA DOBLE : ");
+        pw.println("LISTA SIMPLE : ");
         while(temp!=null){
             pw.println(temp.getDato()+" -> ");
             temp=temp.sgte;
         }
         pw.close(); 
     } 
+    
+    String leerTxt()throws IOException{   //LEE LISTA DEL TXT
+        String s="";
+        InputStream ins = new FileInputStream("Deiby - Lista Simple.txt");
+        Scanner obj = new Scanner(ins);
+        while (obj.hasNextLine())
+            s= s + obj.nextLine()+"\n";
+        
+        ins.close(); 
+        return s;
+    }
 }

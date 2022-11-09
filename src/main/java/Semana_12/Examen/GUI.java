@@ -25,7 +25,7 @@ class Complementos{
     
     static String cadenaAleatoria(int longitud) { // DEVUELVE UN NOMBRE ALEATORIO
         // El banco de caracteres
-        String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         // La cadena en donde iremos agregando un carácter aleatorio
         String cadena = "";
         for (int x = 0; x < longitud; x++) {
@@ -34,7 +34,7 @@ class Complementos{
             cadena += caracterAleatorio;
         }
         return cadena;
-    }
+    }  
 }
 
 
@@ -69,7 +69,8 @@ public class GUI extends javax.swing.JFrame  {
         btn_simple = new javax.swing.JRadioButton();
         btn_doble = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        text_area = new javax.swing.JTextArea();
+        btn_clear = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -109,57 +110,69 @@ public class GUI extends javax.swing.JFrame  {
         btn_doble.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         btn_doble.setText("Doble");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        text_area.setColumns(20);
+        text_area.setRows(5);
+        jScrollPane1.setViewportView(text_area);
+
+        btn_clear.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        btn_clear.setText("CLEAR");
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(lbl_welcome))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_crear)
+                            .addComponent(btn_clear))
+                        .addGap(0, 3, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(lbl_animal)
+                        .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_animal)
-                                .addGap(4, 4, 4)
-                                .addComponent(text_nAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_simple, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_doble, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_crear)
-                            .addComponent(lbl_tipo))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(lbl_welcome)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(text_nAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_tipo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_simple, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_doble, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(5, 5, 5)
                 .addComponent(lbl_welcome)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_animal)
                     .addComponent(text_nAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbl_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_simple)
+                    .addComponent(btn_doble))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_crear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_simple)
-                        .addGap(4, 4, 4)
-                        .addComponent(btn_doble)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_crear))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -167,6 +180,7 @@ public class GUI extends javax.swing.JFrame  {
 
     private void btn_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearActionPerformed
         
+        this.text_area.setText("");
         int n=Integer.parseInt(this.text_nAnimal.getText().trim());
         Lista_Simple met_s = new Lista_Simple();
         Lista_Doble met_d = new Lista_Doble();
@@ -182,6 +196,7 @@ public class GUI extends javax.swing.JFrame  {
             }
             try {
                 met_s.escribirTxt();
+                this.text_area.setText(met_s.leerTxt());
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -193,15 +208,17 @@ public class GUI extends javax.swing.JFrame  {
             }
             try {
                 met_d.escribirTxt();
+                this.text_area.setText(met_d.leerTxt());
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         }else{
                 JOptionPane.showMessageDialog(null, "SIN SELECCION");
                 }
         
         met_s.mostrar();
-        met_d.mostrar();
+        met_d.mostrar();  
     }//GEN-LAST:event_btn_crearActionPerformed
 
     private void text_nAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_nAnimalActionPerformed
@@ -211,6 +228,12 @@ public class GUI extends javax.swing.JFrame  {
     private void btn_simpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_simpleActionPerformed
+
+    private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
+        this.text_area.setText("");
+        this.text_nAnimal.setText("");
+       buttonGroup1.clearSelection();
+    }//GEN-LAST:event_btn_clearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,16 +272,17 @@ public class GUI extends javax.swing.JFrame  {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_crear;
     private javax.swing.JRadioButton btn_doble;
     private javax.swing.JRadioButton btn_simple;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lbl_animal;
     private javax.swing.JLabel lbl_tipo;
     private javax.swing.JLabel lbl_welcome;
+    private javax.swing.JTextArea text_area;
     private javax.swing.JTextField text_nAnimal;
     // End of variables declaration//GEN-END:variables
 }

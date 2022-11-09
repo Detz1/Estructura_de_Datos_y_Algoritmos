@@ -24,7 +24,7 @@ public class Animales {
 
     @Override
     public String toString() {
-        return "( Especie = " + especie + ", nombre = " + nombre + ", edad = " + edad + ", sexo = " + sexo+" )" ;
+        return "( Especie= " + especie + ", nombre= " + nombre + ", edad= " + edad + ", sexo= " + sexo+" )" ;
     }
     
 }
